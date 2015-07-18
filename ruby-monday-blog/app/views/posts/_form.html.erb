@@ -1,0 +1,13 @@
+
+<%= bootstrap_form_for(@post) do |f| %>
+  <p>
+    <%= f.text_field :title %>
+    <%= f.text_area :body %>
+
+    <%= f.fields_for :tags do |t| %>
+      <%= t.text_field :content, label: "Tags" %>
+    <% end %>
+
+    <%= f.submit "Create Post", class: 'btn btn-success' %>
+  </p>
+<% end %>
